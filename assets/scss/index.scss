@@ -1,0 +1,809 @@
+@import "./variable";
+@import "./mixin/mixin";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 32px;
+  margin: auto;
+}
+
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  padding: 30px 0;
+  .n-container {
+    max-width: 1250px;
+    width: 100%;
+    padding: 0 32px;
+    margin: auto;
+    .menu {
+      @include mini;
+      background-color: white;
+      justify-content: space-between;
+      padding: 50px;
+      position: relative;
+      display: none;
+      ul{
+       list-style: none;
+       @include column;
+       gap: 30px;
+       li{
+        a{
+            text-decoration: none;
+            color: black;
+        }
+       }
+      }
+
+      i {
+        font-size: 30px;
+        position: absolute;
+        right: 50px;
+        top: 50px
+      }
+    }
+    .navbar {
+      @include mini;
+      background-color: white;
+      justify-content: space-between;
+      .logo {
+        @include flex;
+        gap: 5px;
+        margin-left: 60px;
+        h2 {
+          font-size: 30px;
+        }
+      }
+      ul {
+        @include flex;
+        gap: 40px;
+        list-style: none;
+        li {
+          font-size: 14px;
+          a {
+            text-decoration: none;
+            color: black;
+          }
+        }
+      }
+      .phone {
+        @include flex;
+        gap: 10px;
+        background-color: $or;
+        padding: 35px 20px;
+        color: white;
+
+        i {
+          font-size: 20px;
+        }
+        p {
+          font-size: 15px;
+        }
+      }
+      i {
+        display: none;
+      }
+    }
+  }
+}
+
+.banner {
+  width: 100%;
+  background-image: url("../img/slider_background.jpg");
+  background-size: cover;
+  background-position: center;
+  .b-all {
+    @include mini;
+    padding: 250px 0;
+    .b-head {
+      @include flex;
+      gap: 7px;
+      h1 {
+        font-size: 70px;
+        color: white;
+        font-weight: 300;
+        text-align: center;
+        span{
+            background-color: $or;
+        }
+      }
+      #h1 {
+        background-color: $or;
+        padding: 0 20px;
+      }
+    }
+  }
+}
+
+.pop {
+  width: 100%;
+  .p-all {
+    @include mini;
+    flex-direction: column;
+    gap: 100px;
+    padding: 150px 0;
+    .p-head {
+      @include head;
+    }
+    .input {
+      @include flex;
+      gap: 20px;
+      input {
+        padding: 15px 0;
+        width: 300px;
+        border: 1px solid $or;
+      }
+      #sort {
+        width: 200px;
+        padding: 15px 0;
+        background-color: $or;
+        border: 1px solid $or;
+      }
+    }
+    .add {
+      flex-direction: column;
+      gap: 100px;
+    }
+    .p-divs {
+      @include mini;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      table {
+        border: 2px solid $or;
+        width: 100%;
+        th,
+        td {
+          border: 2px solid $or;
+          padding: 10px 0;
+        }
+      }
+
+      #form {
+        width: 50%;
+        border: 2px solid $or;
+        @include column;
+        padding: 50px;
+        margin: auto;
+        label {
+          font-size: 20px;
+          color: $or;
+        }
+        input {
+          padding: 10px 0;
+          border-color: $or;
+        }
+        p {
+          color: red;
+          display: none;
+        }
+
+        #submit {
+          width: 150px;
+          background-color: $or;
+          border: none;
+          color: white;
+          cursor: pointer;
+        }
+      }
+      .div3 {
+        width: 31.5%;
+        @include column;
+        gap: 50px;
+        .img {
+          width: 100%;
+          img {
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+        .p-text {
+          @include mini;
+          flex-direction: column;
+          text-align: center;
+          i {
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: $or;
+            cursor: pointer;
+          }
+          h3 {
+            font-size: 22px;
+            font-weight: 300;
+            transition: all 0.5s ease;
+            &:hover {
+              color: gray;
+              cursor: pointer;
+            }
+          }
+          p {
+            color: gray;
+            font-size: 14px;
+          }
+        }
+        .p-icon {
+          @include mini;
+          //gap: 30px;
+          justify-content: space-between;
+          background-color: rgb(241, 241, 232);
+          .p-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-left: 30px;
+            img {
+              width: 100%;
+              height: 100%;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+          }
+          .p {
+            @include flex;
+            gap: 3px;
+            h6 {
+              font-size: 14px;
+              font-weight: 300;
+            }
+            #h6 {
+              color: gray;
+            }
+          }
+          .price {
+            padding: 20px;
+            background-color: $or;
+            font-size: 20px;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
+
+.yellow {
+  width: 100%;
+  background-color: $or;
+  //   .y-container {
+  //     max-width: 1250px;
+  //     width: 100%;
+  //     padding: 0 32px;
+  //     margin: auto;
+  .y-all {
+    @include mini;
+    justify-content: space-between;
+    .yellow1 {
+      width: 50%;
+      color: white;
+      @include flex;
+      flex-direction: column;
+      gap: 40px;
+      text-align: center;
+      padding: 0 75px;
+      h2 {
+        font-weight: 300;
+        font-size: 35px;
+        line-height: 3rem;
+      }
+      p {
+        font-size: 14px;
+        line-height: 2rem;
+      }
+      button {
+        width: 200px;
+        background-color: black;
+        color: white;
+        border: none;
+        padding: 15px 0;
+        font-weight: 700;
+        margin-top: 20px;
+      }
+    }
+
+    .yellow2 {
+      background-image: linear-gradient(
+          rgba(255, 255, 255, 0.5),
+          rgba(255, 255, 255, 0.5)
+        ),
+        url("../img/search_background.jpg");
+      width: 50%;
+      @include flex;
+      flex-direction: column;
+      gap: 50px;
+      padding: 150px 75px;
+
+      h2 {
+        font-size: 35px;
+        font-weight: 300;
+      }
+      form {
+        width: 100%;
+        @include column;
+        input {
+          padding: 10px 0;
+          width: 100%;
+          border: none;
+        }
+        #sub {
+          background-color: $or;
+          color: white;
+          font-size: 20px;
+          text-align: center;
+        }
+      }
+    }
+  }
+  // }
+}
+
+.our {
+  width: 100%;
+  .o-all {
+    @include mini;
+    flex-direction: column;
+    gap: 100px;
+    padding: 100px 0;
+    .o-head {
+      @include head;
+    }
+    .o-divs {
+      @include mini;
+      flex-wrap: wrap;
+      gap: 30px;
+      .div6 {
+        width: 30.5%;
+        @include column;
+        .img {
+          width: 100%;
+          img {
+            width: 11%;
+          }
+        }
+        h3 {
+          font-size: 23px;
+          font-weight: 300;
+        }
+        p {
+          color: gray;
+          line-height: 2rem;
+        }
+      }
+    }
+  }
+}
+
+.up {
+  width: 100%;
+  .u-all {
+    @include mini;
+    flex-direction: column;
+    gap: 50px;
+    padding: 100px 0;
+    .u-head {
+      @include head;
+    }
+    .u-divs {
+      @include mini;
+      flex-direction: column;
+      gap: 100px;
+      .div3 {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        .pr {
+          border: 2px solid $or;
+          color: $or;
+          padding: 30px;
+          h3 {
+            font-size: 45px;
+          }
+        }
+        .text {
+          @include column;
+          padding: 0 55px;
+          .h {
+            @include column;
+            gap: 10px;
+            h3 {
+              font-size: 22px;
+              font-weight: 300;
+            }
+            h6 {
+              font-weight: 300;
+              font-size: 14px;
+            }
+          }
+
+          p {
+            color: gray;
+            font-size: 14px;
+            line-height: 2rem;
+          }
+        }
+        .img {
+          width: 500px;
+          height: 200px;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+}
+
+footer {
+  width: 100%;
+  background-color: rgb(26, 26, 26);
+  .f-all {
+    width: 100%;
+    @include column;
+    //gap: 50px;
+    padding-top: 150px;
+
+    .end-1 {
+      width: 100%;
+      display: flex;
+      //align-items: center;
+      justify-content: space-between;
+      padding-bottom: 50px;
+      .div1 {
+        width: 23%;
+        @include column;
+        gap: 30px;
+        .logo {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          font-size: 20px;
+          font-weight: 700;
+          color: white;
+        }
+        p {
+          color: gray;
+          line-height: 2rem;
+          font-size: 14px;
+        }
+      }
+      .div3 {
+        width: 23%;
+        @include column;
+        gap: 30px;
+        h3 {
+          color: white;
+          // margin-top: -30px;
+        }
+        ul {
+          list-style: none;
+          color: gray;
+          @include column;
+          gap: 10px;
+          li {
+            font-size: 14px;
+            transition: all .5s ease;
+            &:hover{
+                color: $or;
+                cursor: pointer;
+            }
+          }
+        }
+      }
+      .div4 {
+        width: 23%;
+        @include column;
+        gap: 30px;
+        h3 {
+          color: white;
+        }
+        ul {
+          list-style: none;
+          color: gray;
+          @include column;
+          li {
+            font-size: 14px;
+            display: flex;
+            gap: 10px;
+            i {
+              color: $or;
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+    .end-2 {
+      @include mini;
+      justify-content: space-between;
+      color: gray;
+      padding-bottom: 20px;
+      p {
+        font-size: 15px;
+        @include flex;
+        gap: 5px;
+        a {
+          text-decoration: none;
+          color: blue;
+        }
+      }
+      ul {
+        list-style: none;
+        @include flex;
+        gap: 30px;
+        li {
+          color: white;
+          transition: all 0.5s ease;
+          &:hover {
+            cursor: pointer;
+            color: $or;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  nav {
+    .n-container {
+      .navbar {
+        ul {
+          display: none;
+        }
+        .phone {
+          display: none;
+        }
+        i {
+          display: block;
+          font-size: 30px;
+          padding: 30px;
+        }
+      }
+    }
+  }
+
+  .banner {
+    .container {
+      max-width: 800px;
+      .b-all {
+        .b-head {
+          h1 {
+            font-size: 45px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 990px) {
+  // nav{
+  //     .n-container{
+  //         max-width: 1000px;
+
+  //     }
+  // }
+
+  .pop {
+    .container {
+      max-width: 800px;
+      .p-all {
+        .p-divs {
+          flex-direction: column;
+          gap: 50px;
+          .div3 {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .yellow {
+    .y-all {
+      flex-direction: column;
+      .yellow1 {
+        width: 100%;
+        padding: 150px 75px;
+      }
+      .yellow2 {
+        width: 100%;
+      }
+    }
+  }
+
+  .our {
+    .container {
+      max-width: 800px;
+      .o-all {
+        .o-divs {
+          .div6 {
+            width: 100%;
+            .img {
+              img {
+                width: 50px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .up {
+    .container {
+      max-width: 800px;
+      .u-all {
+        .u-divs {
+          .div3 {
+            flex-direction: column;
+            gap: 30px;
+            .pr {
+              width: 130px;
+              order: 2;
+            }
+            .text {
+              padding: 0;
+              order: 3;
+            }
+            .img {
+              width: 100%;
+              order: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    .container {
+      max-width: 800px;
+      .f-all {
+        .end-1 {
+          flex-direction: column;
+          gap: 60px;
+          .div1 {
+            width: 100%;
+          }
+          .div3 {
+            width: 100%;
+          }
+          .div4 {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .banner {
+    .container {
+      max-width: 550px;
+    }
+  }
+
+  .pop {
+    .container {
+      max-width: 550px;
+    }
+  }
+
+  .our {
+    .container {
+      max-width: 550px;
+    }
+  }
+
+  .up {
+    .container {
+      max-width: 550px;
+    }
+  }
+
+  footer {
+    .container {
+      max-width: 550px;
+      .f-all {
+        .end-1 {
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .banner {
+    .container {
+      padding: 0 50px;
+    }
+  }
+
+  .pop {
+    .container {
+      padding: 0 20px;
+    }
+  }
+
+  .yellow {
+    .y-all {
+      .yellow1 {
+        h2 {
+          font-size: 30px;
+        }
+      }
+      .yellow2 {
+        h2 {
+          font-size: 30px;
+        }
+      }
+    }
+  }
+
+  .our {
+    .container {
+      padding: 0 20px;
+      .o-all {
+        .o-head {
+          h2 {
+            font-size: 23px;
+          }
+        }
+        .o-divs {
+          .div6 {
+            .img {
+              img {
+                width: 40px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .up {
+    .container {
+      padding: 0 20px;
+      .u-all {
+        .u-head {
+          h2 {
+            font-size: 24px;
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    .container {
+      padding: 0 20px;
+      .f-all {
+        .end-2 {
+          flex-direction: column;
+          gap: 20px;
+          p {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,31 @@
+@mixin flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin column{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+@mixin mini {
+    width: 100%;
+    @include flex;
+}
+
+@mixin head{
+    @include flex;
+    flex-direction: column;
+    gap: 30px;
+    .line {
+      width: 60px;
+      height: 3px;
+      background-color: $or;
+    }
+    h2 {
+      font-size: 35px;
+      font-weight: 300;
+    }
+}

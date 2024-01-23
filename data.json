@@ -1,0 +1,48 @@
+{
+  "Course": [
+    {
+      "id": 1,
+      "name": "A complete guide to design",
+      "des": "Adobe Guide, Layes, Smart Objects etc...",
+      "img": "./assets/img/course_1.jpg",
+      "price": 29
+    },
+    {
+      "id": 2,
+      "name": "Beginners guide to HTML",
+      "des": "Adobe Guide, Layes, Smart Objects etc...",
+      "img": "./assets/img/course_2.jpg",
+      "price": 58
+    },
+    {
+      "id": 3,
+      "name": "Advanced Photoshop",
+      "des": "Adobe Guide, Layes, Smart Objects etc...",
+      "img": "./assets/img/course_3.jpg",
+      "price": 13
+    }
+  ],
+  "Fav": [
+    {
+      "id": 1,
+      "name": "A complete guide to design",
+      "des": "Adobe Guide, Layes, Smart Objects etc...",
+      "img": "./assets/img/course_1.jpg",
+      "price": 29
+    },
+    {
+      "id": 2,
+      "name": "Beginners guide to HTML",
+      "des": "Adobe Guide, Layes, Smart Objects etc...",
+      "img": "./assets/img/course_2.jpg",
+      "price": 58
+    },
+    {
+      "id": 3,
+      "name": "Advanced Photoshop",
+      "des": "Adobe Guide, Layes, Smart Objects etc...",
+      "img": "./assets/img/course_3.jpg",
+      "price": 13
+    }
+  ]
+}
